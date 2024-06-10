@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "857mRFS3EpGQqxTma3Ybmwnn3ewa8hXegwjLWctFTKDMTHZ5X61hR7NSdJ6DgcpG4RXaH6uL53rcyCCQtkDMQA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.API\\StoreCleanArchitecture.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
