@@ -12,6 +12,13 @@ public class ProductService : IProductService
         _productRepository = productRepository;
     }
 
+    public async Task<Product> AddProductAsync(Product product)
+    {
+        await _productRepository.Products.AddAsync(product);
+        await _productRepository.SaveChangesAsync();
+        return product;
+    }
+
     public async Task<Product?> GetProductAsync(int id)
     {
         return await _productRepository.Products.FindAsync(id);

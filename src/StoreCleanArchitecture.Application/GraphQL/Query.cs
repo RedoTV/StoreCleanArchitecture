@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Entities.Domain;
 
-
 namespace StoreCleanArchitecture.Application.GraphQL;
 
 public class Query
@@ -28,4 +27,6 @@ public class Query
     {
         return await productService.GetProductsAsync();
     }
+
+    
 }
