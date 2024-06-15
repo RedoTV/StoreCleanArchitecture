@@ -4,6 +4,6 @@ namespace StoreCleanArchitecture.Application.Interfaces.Products;
 
 public interface IProductService
 {
-    ICollection<Product> GetProducts();
+    Task<Product?> GetProductAsync(int id);
     Task<ICollection<Product>> GetProductsAsync();
 }

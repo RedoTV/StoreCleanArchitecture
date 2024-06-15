@@ -11,6 +11,11 @@ public class ProductService : IProductService
     {
         _productRepository = productRepository;
     }
-    public ICollection<Product> GetProducts() => _productRepository.Products.ToArray();
+
+    public async Task<Product?> GetProductAsync(int id)
+    {
+        return await _productRepository.Products.FindAsync(id);
+    } 
+
     public async Task<ICollection<Product>> GetProductsAsync() => await _productRepository.Products.ToArrayAsync();
 }

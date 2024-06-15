@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using StoreCleanArchitecture.Application.GraphQL.Queries;
+using StoreCleanArchitecture.Application.GraphQL;
 using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Application.Services.Products;
 
@@ -15,7 +15,7 @@ public static class DependencyInjection
             
         services
             .AddGraphQLServer()
-            .AddQueryType<ProductQuery>();
+            .AddQueryType<Query>();
         return services;
     }
 }

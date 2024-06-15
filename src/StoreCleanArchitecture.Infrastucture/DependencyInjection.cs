@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Infrastucture.DbContexts;
 
@@ -10,6 +11,13 @@ public static class DependencyInjection
         this IServiceCollection services, 
         IConfiguration configuration)
     {
+        services.AddSerilog((services, lc) => lc
+            .ReadFrom.Configuration(configuration)
+            .ReadFrom.Services(services)
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+        );
+
         string dbConnection = configuration.GetConnectionString("DbConnection")!;
 
         services.AddSqlite<ProductDbContext>(dbConnection);
