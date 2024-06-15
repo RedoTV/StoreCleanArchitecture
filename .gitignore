@@ -12,3 +12,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+
+#npm
+node_modules/
+.angular/
