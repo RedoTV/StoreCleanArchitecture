@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\StoreCleanArchitecture.API.props" />
-</Project>
