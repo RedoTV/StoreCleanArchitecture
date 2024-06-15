@@ -1,0 +1,12 @@
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\bin\Debug\net8.0\StoreCleanArchitecture.Domain.deps.json
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\bin\Debug\net8.0\StoreCleanArchitecture.Domain.dll
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\bin\Debug\net8.0\StoreCleanArchitecture.Domain.pdb
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.AssemblyInfoInputs.cache
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.AssemblyInfo.cs
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.csproj.CoreCompileInputs.cache
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.sourcelink.json
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.dll
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\refint\StoreCleanArchitecture.Domain.dll
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\StoreCleanArchitecture.Domain.pdb
+C:\Users\vadim\projects\StoreCleanArchitecture\src\StoreCleanArchitecture.Domain\obj\Debug\net8.0\ref\StoreCleanArchitecture.Domain.dll

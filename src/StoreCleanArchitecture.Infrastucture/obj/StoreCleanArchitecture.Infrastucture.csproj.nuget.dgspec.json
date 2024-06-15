@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {}
+    "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {}
   },
   "projects": {
-    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
+    "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
         "projectName": "StoreCleanArchitecture.Application",
-        "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
-        "packagesPath": "C:\\Users\\Вадим\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\obj\\",
+        "projectPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
+        "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Вадим\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
-                "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj"
+              "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
+                "projectPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj"
               }
             }
           }
@@ -50,6 +56,14 @@
             "Ardalis.Specification.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "HotChocolate.Abstractions": {
+              "target": "Package",
+              "version": "[13.9.6, )"
+            },
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[13.9.6, )"
             }
           },
           "imports": [
@@ -68,26 +82,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
+    "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
         "projectName": "StoreCleanArchitecture.Domain",
-        "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
-        "packagesPath": "C:\\Users\\Вадим\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\obj\\",
+        "projectPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
+        "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Вадим\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -126,34 +146,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {
+    "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
         "projectName": "StoreCleanArchitecture.Infrastucture",
-        "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
-        "packagesPath": "C:\\Users\\Вадим\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\obj\\",
+        "projectPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
+        "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Вадим\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
-                "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj"
+              "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
+                "projectPath": "C:\\Users\\vadim\\projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj"
               }
             }
           }
@@ -194,7 +220,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

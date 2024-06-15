@@ -1,9 +1,17 @@
+using StoreCleanArchitecture.Application;
+using StoreCleanArchitecture.Application.GraphQL.Queries;
+using StoreCleanArchitecture.Application.Interfaces.Products;
+using StoreCleanArchitecture.Application.Services.Products;
+using StoreCleanArchitecture.Infrastucture;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services
+    .AddApplication()
+    .AddInfrastucture(builder.Configuration);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -16,10 +24,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.MapGraphQL();
 app.MapControllers();
 
 app.Run();
