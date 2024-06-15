@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {}
+    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
+    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
+        "projectUniqueName": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
         "projectName": "StoreCleanArchitecture.Application",
-        "projectPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
+        "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj",
         "packagesPath": "C:\\Users\\Вадим\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\obj\\",
+        "outputPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Вадим\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
-                "projectPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj"
+              "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
+                "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
+    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
+        "projectUniqueName": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
         "projectName": "StoreCleanArchitecture.Domain",
-        "projectPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
+        "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\StoreCleanArchitecture.Domain.csproj",
         "packagesPath": "C:\\Users\\Вадим\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\obj\\",
+        "outputPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Вадим\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -130,14 +130,14 @@
         }
       }
     },
-    "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {
+    "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
+        "projectUniqueName": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
         "projectName": "StoreCleanArchitecture.Infrastucture",
-        "projectPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
+        "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
         "packagesPath": "C:\\Users\\Вадим\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\obj\\",
+        "outputPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Вадим\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -152,8 +152,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
-                "projectPath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj"
+              "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj": {
+                "projectPath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Application\\StoreCleanArchitecture.Application.csproj"
               }
             }
           }

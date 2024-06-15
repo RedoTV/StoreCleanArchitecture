@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4I623eLYRQc=",
+  "dgSpecHash": "AOf5Rk/A/04=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
+  "projectFilePath": "c:\\Projects\\StoreCleanArchitecture\\src\\StoreCleanArchitecture.Infrastucture\\StoreCleanArchitecture.Infrastucture.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Вадим\\.nuget\\packages\\ardalis.specification\\8.0.0\\ardalis.specification.8.0.0.nupkg.sha512",
     "C:\\Users\\Вадим\\.nuget\\packages\\ardalis.specification.entityframeworkcore\\8.0.0\\ardalis.specification.entityframeworkcore.8.0.0.nupkg.sha512",
@@ -31,5 +31,12 @@
     "C:\\Users\\Вадим\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Вадим\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }
