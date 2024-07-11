@@ -14,18 +14,17 @@ import Product from '../models/product';
 })
 export class ProductComponent implements OnInit {
 
-  private _productService: ProductService;
   public products: Product[] = [{name: "Tom", id: 4}];
 
-  constructor(productService: ProductService) {
-    this._productService = productService;
-  }
-  ngOnInit(): void {
-    this.getAllProducts()
+  constructor(private productService: ProductService) {
+
   }
 
-  public getAllProducts()
-  {
-    let sub = this._productService.getAllProducts().subscribe(next => this.products = (next));
+  ngOnInit(): void {
+    this.productService.getAllProducts().subscribe(
+      (data:Product[]) => this.products = data,
+      (err: Error) => console.log(err.message)
+    )
   }
+
 }

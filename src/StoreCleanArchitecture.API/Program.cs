@@ -11,6 +11,7 @@ builder.Services
     .AddInfrastucture(builder.Configuration);
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -28,6 +29,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseCors(builder => builder.AllowAnyOrigin());
 
 app.MapGraphQL();
 app.MapControllers();

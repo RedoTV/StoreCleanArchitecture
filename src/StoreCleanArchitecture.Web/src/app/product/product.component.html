@@ -1,7 +1,8 @@
 <div>
-  {{products[0].name}}
+
   @for (product of products; track $index)
   {
+    {{product.name}}
     <h2>id: {{product.id}}</h2>
 
   }
