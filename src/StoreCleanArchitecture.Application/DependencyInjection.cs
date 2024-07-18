@@ -12,9 +12,12 @@ public static class DependencyInjection
 
         services
             .AddTransient<IProductService, ProductService>();
+
+        services.AddAuthorization();
             
         services
             .AddGraphQLServer()
+            .AddAuthorization()
             .AddQueryType<Query>()
             .AddMutationType<Mutation>();
             

@@ -27,6 +27,5 @@ public class Query
     {
         return await productService.GetProductsAsync();
     }
-
-    
+   
 }
