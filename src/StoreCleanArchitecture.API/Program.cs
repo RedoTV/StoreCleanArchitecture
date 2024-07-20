@@ -1,6 +1,7 @@
 using Serilog;
 using Serilog.Events;
 using StoreCleanArchitecture.Application;
+using StoreCleanArchitecture.Domain.Entities;
 using StoreCleanArchitecture.Infrastucture;
 using StoreCleanArchitecture.Infrastucture.Middlewares;
 
@@ -27,9 +28,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
+app.MapIdentityApi<User>();
+
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseCors(builder => builder.AllowAnyOrigin());

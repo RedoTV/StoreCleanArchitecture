@@ -6,8 +6,8 @@ namespace StoreCleanArchitecture.Application.Services.Products;
 
 public class ProductService : IProductService
 {
-    private readonly IProductDbContext _productRepository;
-    public ProductService(IProductDbContext productRepository)
+    private readonly IStoreDbContext _productRepository;
+    public ProductService(IStoreDbContext productRepository)
     {
         _productRepository = productRepository;
     }
