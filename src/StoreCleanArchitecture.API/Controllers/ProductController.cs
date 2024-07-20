@@ -8,9 +8,9 @@ namespace StoreCleanArchitecture.API.Controllers;
 [Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
-    private readonly IProductDbContext _productDbContext;
+    private readonly IStoreDbContext _productDbContext;
     private readonly IProductService _productService;
-    public ProductController(IProductDbContext productDbContext, IProductService productService){
+    public ProductController(IStoreDbContext productDbContext, IProductService productService){
         _productDbContext = productDbContext;
         _productService = productService;
     }

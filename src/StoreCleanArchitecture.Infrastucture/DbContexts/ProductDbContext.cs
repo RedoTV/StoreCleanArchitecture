@@ -4,11 +4,10 @@ using StoreCleanArchitecture.Entities.Domain;
 
 namespace StoreCleanArchitecture.Infrastucture.DbContexts;
 
-public class ProductDbContext : DbContext, IProductDbContext
+public class StoreDbContext : DbContext, IStoreDbContext
 {
-    public ProductDbContext(DbContextOptions options) : base(options)
+    public StoreDbContext(DbContextOptions options) : base(options)
     {
-        Database.EnsureCreated();
     }
 
     public DbSet<Product> Products { get; set; }

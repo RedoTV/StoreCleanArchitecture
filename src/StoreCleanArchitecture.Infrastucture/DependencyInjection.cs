@@ -1,10 +1,8 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using StoreCleanArchitecture.Application.Interfaces.Products;
+using StoreCleanArchitecture.Domain.Entities;
 using StoreCleanArchitecture.Infrastucture.DbContexts;
 
 namespace StoreCleanArchitecture.Infrastucture;
@@ -21,28 +19,17 @@ public static class DependencyInjection
             .WriteTo.Console()
         );
 
-        string dbConnection = configuration.GetConnectionString("DbConnection")!;
+        string storeDbConnection = configuration.GetConnectionString("StoreDbConnection")!;
+        services.AddSqlite<StoreDbContext>(storeDbConnection);
+        services.AddScoped<IStoreDbContext>(sp => sp.GetRequiredService<StoreDbContext>());
 
-        services.AddSqlite<ProductDbContext>(dbConnection);
+        string usersDbConnection = configuration.GetConnectionString("UsersDbConnection")!;
+        services.AddSqlite<UsersDbContext>(usersDbConnection);
+        
+        services.AddAuthorization();
 
-        services.AddScoped<IProductDbContext>(sp => sp.GetRequiredService<ProductDbContext>());
-
-        var signingKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes("B1G0EsWG26THMXhY08dPRdSHvzMZO65I"));
-
-        services
-            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters =
-                    new TokenValidationParameters
-                    {
-                        ValidIssuer = "http://localhost:5000/",
-                        ValidAudience = "http://localhost:4200/",
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = signingKey
-                    };
-            });
+        services.AddIdentityApiEndpoints<User>().
+            AddEntityFrameworkStores<UsersDbContext>();
 
         return services;
     }
