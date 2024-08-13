@@ -1,42 +1,48 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StoreCleanArchitecture.Application.Interfaces.Email;
 using StoreCleanArchitecture.Application.Interfaces.Products;
-using StoreCleanArchitecture.Entities.Domain;
+using StoreCleanArchitecture.Domain.Entities;
 
 namespace StoreCleanArchitecture.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
-public class ProductController : ControllerBase
+public class ProductController(
+    IProductRepository productDbContext,
+    IProductService productService,
+    IEmailSender emailSender)
+    : ControllerBase
 {
-    private readonly IStoreDbContext _productDbContext;
-    private readonly IProductService _productService;
-    public ProductController(IStoreDbContext productDbContext, IProductService productService){
-        _productDbContext = productDbContext;
-        _productService = productService;
-    }
-    
-    [HttpGet("getFromDB")]
-    public IActionResult GetFromDB()
+    [HttpGet("GetFromDb")]
+    public IActionResult GetFromDb()
     {
-        return Ok(_productDbContext.Products.FirstOrDefault());
+        return Ok(productDbContext.GetAll());
     }
 
-    [HttpGet("addWithDB")]
-    public async Task<IActionResult> AddWithDB()
+    [HttpGet("AddWithDb")]
+    public async Task<IActionResult> AddWithDb()
     {
-        _productDbContext.Products.Add(new Product{
+        await productDbContext.AddAsync(new Product{
             Name = "Apple",
             Description = "Simple apple",
             Category = "Fruits",
             Cost = 0
         });
-        await _productDbContext.SaveChangesAsync();
         return Ok();
     }
 
     [HttpGet("GetFromService")]
-    public async Task<IActionResult> GetFromService()
+    public IActionResult GetFromService()
     {
-        return Ok(await _productService.GetProductsAsync());
+        return Ok(productService.GetProducts());
+    }
+
+    [HttpGet("CheckEmail")]
+    public async Task<IActionResult> CheckEmail(string reciever, string subject, string htmlMessage)
+    {
+        await emailSender.SendEmailAsync(reciever, subject, htmlMessage);
+        return Ok();
     }
 }

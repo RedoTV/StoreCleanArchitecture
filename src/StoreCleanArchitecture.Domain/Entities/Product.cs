@@ -1,4 +1,4 @@
-namespace StoreCleanArchitecture.Entities.Domain;
+namespace StoreCleanArchitecture.Domain.Entities;
 
 public class Product
 {

@@ -1,7 +1,4 @@
-using Serilog;
-using Serilog.Events;
 using StoreCleanArchitecture.Application;
-using StoreCleanArchitecture.Domain.Entities;
 using StoreCleanArchitecture.Infrastucture;
 using StoreCleanArchitecture.Infrastucture.Middlewares;
 
@@ -28,15 +25,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-app.MapIdentityApi<User>();
-
 app.UseHttpsRedirection();
 
+app.UseCors(build => build.AllowAnyOrigin());
+
 app.UseAuthorization();
+app.UseAuthentication();
 
-app.UseCors(builder => builder.AllowAnyOrigin());
-
-app.MapGraphQL();
 app.MapControllers();
 
 app.Run();

@@ -1,10 +1,10 @@
-using StoreCleanArchitecture.Entities.Domain;
+using StoreCleanArchitecture.Domain.Entities;
 
 namespace StoreCleanArchitecture.Application.Interfaces.Products;
 
 public interface IProductService
 {
     Task<Product?> GetProductAsync(int id);
-    Task<ICollection<Product>> GetProductsAsync();
+    Product[] GetProducts();
     Task<Product> AddProductAsync(Product product);
 }
