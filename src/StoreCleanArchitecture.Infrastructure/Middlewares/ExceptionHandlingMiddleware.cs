@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace StoreCleanArchitecture.Infrastucture.Middlewares;
+namespace StoreCleanArchitecture.Infrastructure.Middlewares;
 
 public class ExceptionHandlingMiddleware
 {

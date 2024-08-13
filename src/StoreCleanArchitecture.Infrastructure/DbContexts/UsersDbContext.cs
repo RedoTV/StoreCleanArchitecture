@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using StoreCleanArchitecture.Domain.Entities;
 
-namespace StoreCleanArchitecture.Infrastucture.DbContexts;
+namespace StoreCleanArchitecture.Infrastructure.DbContexts;
 
 public class UsersDbContext : DbContext
 {
     public UsersDbContext(DbContextOptions options) : base(options)
     {
-        Database.EnsureCreated();
+        //Database.EnsureCreated();
     }    
     
     public DbSet<User> Users { get; set; }

@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Domain.Entities;
 
-namespace StoreCleanArchitecture.Infrastucture.DbContexts;
+namespace StoreCleanArchitecture.Infrastructure.DbContexts;
 
 public class ProductDbContext : DbContext
 {

@@ -1,12 +1,12 @@
 using StoreCleanArchitecture.Application;
-using StoreCleanArchitecture.Infrastucture;
-using StoreCleanArchitecture.Infrastucture.Middlewares;
+using StoreCleanArchitecture.Infrastructure;
+using StoreCleanArchitecture.Infrastructure.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddApplication()
-    .AddInfrastucture(builder.Configuration);
+    .AddInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddCors();

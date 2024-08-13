@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreCleanArchitecture.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreCleanArchitecture.Application", "src\StoreCleanArchitecture.Application\StoreCleanArchitecture.Application.csproj", "{902883CC-1B8C-43DD-AD67-635D70A8AB40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreCleanArchitecture.Infrastucture", "src\StoreCleanArchitecture.Infrastucture\StoreCleanArchitecture.Infrastucture.csproj", "{997DB518-380D-4D47-80B3-9A4CA5C69A3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreCleanArchitecture.Infrastructure", "src\StoreCleanArchitecture.Infrastructure\StoreCleanArchitecture.Infrastructure.csproj", "{997DB518-380D-4D47-80B3-9A4CA5C69A3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreCleanArchitecture.API", "src\StoreCleanArchitecture.API\StoreCleanArchitecture.API.csproj", "{082D2CCA-22A3-43D9-9657-506F3E041D1A}"
 EndProject

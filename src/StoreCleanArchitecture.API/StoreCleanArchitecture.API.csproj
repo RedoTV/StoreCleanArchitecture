@@ -15,7 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StoreCleanArchitecture.Application\StoreCleanArchitecture.Application.csproj" />
-    <ProjectReference Include="..\StoreCleanArchitecture.Infrastucture\StoreCleanArchitecture.Infrastucture.csproj" />
+    <ProjectReference Include="..\StoreCleanArchitecture.Infrastructure\StoreCleanArchitecture.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DatabaseFiles\" />

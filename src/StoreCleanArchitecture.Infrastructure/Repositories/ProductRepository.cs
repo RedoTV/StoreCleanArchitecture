@@ -1,8 +1,8 @@
 ﻿using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Domain.Entities;
-using StoreCleanArchitecture.Infrastucture.DbContexts;
+using StoreCleanArchitecture.Infrastructure.DbContexts;
 
-namespace StoreCleanArchitecture.Infrastucture.Repositories;
+namespace StoreCleanArchitecture.Infrastructure.Repositories;
 
 public class ProductRepository(ProductDbContext productDbContext) : IProductRepository
 {
