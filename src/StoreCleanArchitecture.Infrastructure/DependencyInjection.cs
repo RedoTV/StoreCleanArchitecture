@@ -8,7 +8,7 @@ using StoreCleanArchitecture.Application.Interfaces.Email;
 using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Infrastructure.DbContexts;
 using StoreCleanArchitecture.Infrastructure.Repositories;
-using StoreCleanArchitecture.Infrastucture.Services;
+using StoreCleanArchitecture.Infrastructure.Services;
 
 namespace StoreCleanArchitecture.Infrastructure;
 public static class DependencyInjection
@@ -26,16 +26,6 @@ public static class DependencyInjection
         
         services.AddSerilog();
         
-        // services.AddSerilog((services, lc) => lc
-        //     .ReadFrom.Configuration(configuration)
-        //     .ReadFrom.Services(services)
-        //     .Enrich.FromLogContext()
-        //     .WriteTo.Console()
-        //     
-        // );
-
-        
-
         services.AddTransient<IEmailSender, EmailSender>();
 
         string productsDbConnection = configuration.GetConnectionString("StoreDbConnection")!;

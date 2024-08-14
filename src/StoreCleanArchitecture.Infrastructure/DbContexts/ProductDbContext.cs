@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using StoreCleanArchitecture.Application.Interfaces.Products;
 using StoreCleanArchitecture.Domain.Entities;
 
 namespace StoreCleanArchitecture.Infrastructure.DbContexts;

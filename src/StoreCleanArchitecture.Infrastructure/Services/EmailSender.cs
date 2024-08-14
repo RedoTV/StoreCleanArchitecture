@@ -3,7 +3,7 @@ using System.Net.Mail;
 using Microsoft.Extensions.Configuration;
 using StoreCleanArchitecture.Application.Interfaces.Email;
 
-namespace StoreCleanArchitecture.Infrastucture.Services;
+namespace StoreCleanArchitecture.Infrastructure.Services;
 
 public class EmailSender(IConfiguration configuration) : IEmailSender
 {

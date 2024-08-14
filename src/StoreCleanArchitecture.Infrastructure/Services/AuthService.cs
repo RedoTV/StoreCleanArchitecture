@@ -1,15 +1,31 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using StoreCleanArchitecture.Application.DTOs.User;
 using StoreCleanArchitecture.Application.Interfaces.Auth;
 using StoreCleanArchitecture.Domain.Entities;
 using StoreCleanArchitecture.Domain.Settings.Auth;
+using StoreCleanArchitecture.Infrastructure.DbContexts;
 
-namespace StoreCleanArchitecture.Infrastucture.Services;
+namespace StoreCleanArchitecture.Infrastructure.Services;
 
-public class AuthService : IAuthService
+public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper) : IAuthService
 {
+    public string SignIn(UserSignInDto user)
+    {
+        // User mappedUser = _mapper.Map<User>(user);
+        // return null;
+        throw new NotImplementedException();
+    }
+
+    public string Register(UserRegisterDto user)
+    {
+        throw new NotImplementedException();
+    }
+
     public string GenerateToken(User user)
     {
         var handler = new JwtSecurityTokenHandler();

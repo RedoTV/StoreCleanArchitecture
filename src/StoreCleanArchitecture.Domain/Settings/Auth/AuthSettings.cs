@@ -2,5 +2,5 @@
 
 public static class AuthSettings
 {
-    public static string PrivateKey { get; set; } = "jfvhHKqNb4FJq8UowleD1RXSnl9v6VZB";
+    public static readonly string PrivateKey = "jfvhHKqNb4FJq8UowleD1RXSnl9v6VZB";
 }

@@ -14,12 +14,19 @@ public class ProductController(
     IEmailSender emailSender)
     : ControllerBase
 {
+    
+    [HttpGet("GetFromService")]
+    public IActionResult GetFromService()
+    {
+        return Ok(productService.GetProducts());
+    }
+    
     [HttpGet("GetFromDb")]
     public IActionResult GetFromDb()
     {
         return Ok(productDbContext.GetAll());
     }
-
+    
     [HttpGet("AddWithDb")]
     public async Task<IActionResult> AddWithDb()
     {
@@ -30,12 +37,6 @@ public class ProductController(
             Cost = 0
         });
         return Ok();
-    }
-
-    [HttpGet("GetFromService")]
-    public IActionResult GetFromService()
-    {
-        return Ok(productService.GetProducts());
     }
 
     [Authorize]
