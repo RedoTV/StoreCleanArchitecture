@@ -6,7 +6,7 @@ namespace StoreCleanArchitecture.Application.Mapper;
 
 public class UserProfile : Profile
 {
-    UserProfile()
+    public UserProfile()
     {
         CreateMap<UserSignInDto, User>();
         CreateMap<UserRegisterDto, User>();

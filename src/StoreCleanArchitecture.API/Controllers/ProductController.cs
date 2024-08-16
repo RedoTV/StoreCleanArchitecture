@@ -6,6 +6,7 @@ using StoreCleanArchitecture.Domain.Entities;
 
 namespace StoreCleanArchitecture.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController(
@@ -14,7 +15,6 @@ public class ProductController(
     IEmailSender emailSender)
     : ControllerBase
 {
-    
     [HttpGet("GetFromService")]
     public IActionResult GetFromService()
     {

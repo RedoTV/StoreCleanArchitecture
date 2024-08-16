@@ -1,3 +1,7 @@
 ﻿namespace StoreCleanArchitecture.Application.DTOs.User;
 
-public record UserSignInDto(string Name, string Password);
+public class UserSignInDto
+{
+    public required string Name { get; set; }
+    public required string Password { get; set; }
+}
