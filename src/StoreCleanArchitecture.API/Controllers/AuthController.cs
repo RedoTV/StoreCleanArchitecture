@@ -6,19 +6,27 @@ namespace StoreCleanArchitecture.API.Controllers;
 
 public class AuthController : Controller
 {
-    private IAuthService AuthService { get; set; }
-    public AuthController(IAuthService authService)
+    private IAuthService AuthService { get; }
+    public ILogger<AuthController> Logger { get; }
+
+    public AuthController(IAuthService authService, ILogger<AuthController> logger)
     {
         AuthService = authService;
+        Logger = logger;
     }
     
     [HttpPost("Register")]
     public async Task<IActionResult> Register(UserRegisterDto user)
     {
-        string token = await AuthService.Register(user);
-        if (token == string.Empty)
-            return BadRequest("Email already exists");
-        
-        return Ok(token);
+        try
+        {
+            string token = await AuthService.Register(user);
+            return Ok(token);
+        }
+        catch (Exception exc)
+        {
+            Logger.LogError(exc.Message);
+            return BadRequest(exc.Message);
+        }
     }
 }

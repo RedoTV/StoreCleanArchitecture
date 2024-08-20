@@ -6,7 +6,7 @@ using StoreCleanArchitecture.Domain.Entities;
 
 namespace StoreCleanArchitecture.API.Controllers;
 
-[Authorize]
+[Authorize(Roles = "User")]
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController(
@@ -39,7 +39,7 @@ public class ProductController(
         return Ok();
     }
 
-    [Authorize]
+    
     [HttpGet("CheckEmail")]
     public async Task<IActionResult> CheckEmail(string reciever, string subject, string htmlMessage)
     {

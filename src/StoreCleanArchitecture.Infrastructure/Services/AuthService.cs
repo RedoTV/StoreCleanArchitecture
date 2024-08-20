@@ -4,22 +4,21 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using AutoMapper;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using StoreCleanArchitecture.Application.DTOs.User;
+using StoreCleanArchitecture.Application.Extentions;
 using StoreCleanArchitecture.Application.Interfaces.Auth;
 using StoreCleanArchitecture.Domain.Entities;
-using StoreCleanArchitecture.Domain.Settings.Auth;
 using StoreCleanArchitecture.Infrastructure.DbContexts;
 
 namespace StoreCleanArchitecture.Infrastructure.Services;
 
-public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper) : IAuthService
+public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper, IConfiguration _configuration) : IAuthService
 {
     private readonly int _keySize = 64;
     private readonly int _iterations = 350000;
-    private readonly HashAlgorithmName _hashAlgorithm = HashAlgorithmName.SHA512;
+    private readonly HashAlgorithmName _hashAlgorithm = HashAlgorithmName.SHA256;
     public string SignIn(UserSignInDto user)
     {
         // User mappedUser = _mapper.Map<User>(user);
@@ -31,16 +30,20 @@ public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper) : IAut
     {
         User mappedUser = _mapper.Map<User>(user);
         
+        //if request email not valid return empty string
+        if (!mappedUser.ValidateEmail())
+            throw new ValidationException("Email not valid");
+        
         //if email exists in DB return empty string as jwt token 
-        if (_usersDbContext.Users.Where(u => u.Email == mappedUser.Email).Count() > 0)
-            return string.Empty;
+        if (_usersDbContext.Users.Any(u => u.Email == mappedUser.Email))
+            throw new ArgumentException("Email already exists");
         
         string hashedPassword = HashPasword(user.Password, out byte[] salt);
         
         //init empty properties
         mappedUser.HashedPassword = hashedPassword;
         mappedUser.Salt = Convert.ToHexString(salt);
-        mappedUser.Roles = ["User"];
+        mappedUser.Role = "User";
         
         //add new user to db
         await _usersDbContext.Users.AddAsync(mappedUser);
@@ -71,31 +74,25 @@ public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper) : IAut
     
     public string GenerateToken(User user)
     {
-        var handler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(AuthSettings.PrivateKey);
+        List<Claim> claimsForToken =
+        [
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, user.Role)
+        ];
+        
+        var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!);
         var credentials = new SigningCredentials(
             new SymmetricSecurityKey(key),
             SecurityAlgorithms.HmacSha256Signature);
 
-        var tokenDescriptor = new SecurityTokenDescriptor
-        {
-            Subject = GenerateClaims(user),
-            Expires = DateTime.UtcNow.AddDays(1),
-            SigningCredentials = credentials
-        };
-
-        var token = handler.CreateToken(tokenDescriptor);
-        return handler.WriteToken(token);
-    }
-    
-    private static ClaimsIdentity GenerateClaims(User user)
-    {
-        var claims = new ClaimsIdentity();
-        claims.AddClaim(new Claim(ClaimTypes.Name, user.Email));
-
-        foreach (var role in user.Roles)
-            claims.AddClaim(new Claim(ClaimTypes.Role, role));
-
-        return claims;
+        var token = new JwtSecurityToken(
+            claims: claimsForToken,
+            issuer: _configuration.GetSection("Jwt:Issuer").Value,
+            audience: _configuration.GetSection("Jwt:Audience").Value,
+            signingCredentials: credentials,
+            expires: DateTime.Now.AddHours(6)
+        );
+            
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

@@ -1,7 +1,9 @@
-using Microsoft.AspNetCore.Identity;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using StoreCleanArchitecture.Application.Interfaces.Auth;
 using StoreCleanArchitecture.Application.Interfaces.Email;
@@ -50,7 +52,21 @@ public static class DependencyInjection
         
         services.AddAuthorization();
 
-        services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    ValidAudience = configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!)),
+                    ClockSkew = TimeSpan.FromMinutes(5)
+                };
+            });
         
         services.AddTransient<IAuthService,AuthService>();
         

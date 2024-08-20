@@ -13,5 +13,5 @@ public class User
     public required string Name { get; set; } 
     public required string HashedPassword { get; set; }
     public required string Salt { get; set; } 
-    public required IList<string> Roles { get; set; }
+    public required string Role { get; set; }
 }

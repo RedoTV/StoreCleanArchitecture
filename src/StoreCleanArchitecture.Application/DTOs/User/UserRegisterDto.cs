@@ -1,4 +1,6 @@
-﻿namespace StoreCleanArchitecture.Application.DTOs.User;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace StoreCleanArchitecture.Application.DTOs.User;
 
 public class UserRegisterDto
 {
