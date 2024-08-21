@@ -16,5 +16,5 @@ public class ProductService(IProductRepository productRepository) : IProductServ
         return await productRepository.GetByIdAsync(id);
     } 
 
-    public Product[] GetProducts() => productRepository.GetAll().Where(el => el.Id > 2 && el.Id < 5).ToArray();
+    public Product[] GetProducts() => productRepository.GetAll().ToArray();
 }

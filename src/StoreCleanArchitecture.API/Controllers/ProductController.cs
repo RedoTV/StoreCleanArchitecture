@@ -38,7 +38,6 @@ public class ProductController(
         });
         return Ok();
     }
-
     
     [HttpGet("CheckEmail")]
     public async Task<IActionResult> CheckEmail(string reciever, string subject, string htmlMessage)
