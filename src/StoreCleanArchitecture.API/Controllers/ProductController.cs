@@ -10,7 +10,7 @@ namespace StoreCleanArchitecture.API.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController(
-    IProductRepository productDbContext,
+    IProductRepository _storeDbContext,
     IProductService productService,
     IEmailSender emailSender)
     : ControllerBase
@@ -24,13 +24,13 @@ public class ProductController(
     [HttpGet("GetFromDb")]
     public IActionResult GetFromDb()
     {
-        return Ok(productDbContext.GetAll());
+        return Ok(_storeDbContext.GetAll());
     }
     
     [HttpGet("AddWithDb")]
     public async Task<IActionResult> AddWithDb()
     {
-        await productDbContext.AddAsync(new Product{
+        await _storeDbContext.AddAsync(new Product{
             Name = "Apple",
             Description = "Simple apple",
             Category = "Fruits",

@@ -7,7 +7,7 @@ namespace StoreCleanArchitecture.API.Controllers;
 public class AuthController : Controller
 {
     private IAuthService AuthService { get; }
-    public ILogger<AuthController> Logger { get; }
+    private ILogger<AuthController> Logger { get; }
 
     public AuthController(IAuthService authService, ILogger<AuthController> logger)
     {
@@ -21,6 +21,21 @@ public class AuthController : Controller
         try
         {
             string token = await AuthService.Register(user);
+            return Ok(token);
+        }
+        catch (Exception exc)
+        {
+            Logger.LogError(exc.Message);
+            return BadRequest(exc.Message);
+        }
+    }
+    
+    [HttpPost("SignIn")]
+    public async Task<IActionResult> SignIn(UserSignInDto user)
+    {
+        try
+        {
+            string token = await AuthService.SignIn(user);
             return Ok(token);
         }
         catch (Exception exc)

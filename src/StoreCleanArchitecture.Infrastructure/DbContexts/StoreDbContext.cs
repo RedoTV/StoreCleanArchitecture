@@ -3,14 +3,14 @@ using StoreCleanArchitecture.Domain.Entities;
 
 namespace StoreCleanArchitecture.Infrastructure.DbContexts;
 
-public class ProductDbContext : DbContext
+public class StoreDbContext : DbContext
 {
-    public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
+    public StoreDbContext(DbContextOptions<StoreDbContext> options) : base(options)
     {
         // Database.EnsureCreated();
     }
 
-    public DbSet<Product> Products { get; set; }
+    public DbSet<Product> Products { get; init; }
     
     // override protected void OnModelCreating(ModelBuilder builder){
     //     base.OnModelCreating(builder);

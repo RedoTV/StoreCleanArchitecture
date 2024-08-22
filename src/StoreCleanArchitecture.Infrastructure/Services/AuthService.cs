@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using StoreCleanArchitecture.Application.DTOs.User;
@@ -16,14 +18,27 @@ namespace StoreCleanArchitecture.Infrastructure.Services;
 
 public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper, IConfiguration _configuration) : IAuthService
 {
-    private readonly int _keySize = 64;
-    private readonly int _iterations = 350000;
-    private readonly HashAlgorithmName _hashAlgorithm = HashAlgorithmName.SHA256;
-    public string SignIn(UserSignInDto user)
+    public async Task<string> SignIn(UserSignInDto user)
     {
-        // User mappedUser = _mapper.Map<User>(user);
-        // return null;
-        throw new NotImplementedException();
+        User mappedUser = _mapper.Map<User>(user);
+        
+        User? foundedUser = await _usersDbContext.Users
+            .Where(u => u.Name == mappedUser.Name)
+            .FirstOrDefaultAsync();
+        
+        //if user with this name doesn't exist in DB throw new Exception 
+        if (foundedUser is null)
+            throw new ArgumentException("user with that name was not found");
+
+        //if the password is incorrect, throw an exception
+        bool verifyResult = VerifyPassword(user.Password, foundedUser.HashedPassword, Convert.FromHexString(foundedUser.Salt));
+        if (!verifyResult)
+        {
+            throw new VerificationException("password is incorrect");
+        }
+        
+        string token = GenerateToken(foundedUser);
+        return token;
     }
 
     public async Task<string> Register(UserRegisterDto user)
@@ -34,11 +49,15 @@ public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper, IConfi
         if (!mappedUser.ValidateEmail())
             throw new ValidationException("Email not valid");
         
-        //if email exists in DB return empty string as jwt token 
+        //if user with this email exists in DB throw new Exception 
         if (_usersDbContext.Users.Any(u => u.Email == mappedUser.Email))
-            throw new ArgumentException("Email already exists");
+            throw new ArgumentException("User with this email already exists");
         
-        string hashedPassword = HashPasword(user.Password, out byte[] salt);
+        //if user with this name exists in DB throw new Exception 
+        if (_usersDbContext.Users.Any(u => u.Name == mappedUser.Name))
+            throw new ArgumentException("User with this name already exists");
+        
+        string hashedPassword = HashPassword(user.Password, out byte[] salt);
         
         //init empty properties
         mappedUser.HashedPassword = hashedPassword;
@@ -54,7 +73,10 @@ public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper, IConfi
         return token;
     }
     
-    string HashPasword(string password, out byte[] salt)
+    private readonly int _keySize = 64;
+    private readonly int _iterations = 350000;
+    private readonly HashAlgorithmName _hashAlgorithm = HashAlgorithmName.SHA256;
+    string HashPassword(string password, out byte[] salt)
     {
         salt = RandomNumberGenerator.GetBytes(_keySize);
         var hash = Rfc2898DeriveBytes.Pbkdf2(

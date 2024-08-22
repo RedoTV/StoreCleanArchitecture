@@ -33,7 +33,7 @@ public static class DependencyInjection
         services.AddTransient<IEmailSender, EmailSender>();
 
         string productsDbConnection = configuration.GetConnectionString("StoreDbConnection")!;
-        services.AddDbContext<ProductDbContext>(opts => {
+        services.AddDbContext<StoreDbContext>(opts => {
             opts.UseSqlite(
                 productsDbConnection, 
                 b => b.MigrationsAssembly("StoreCleanArchitecture.API")
