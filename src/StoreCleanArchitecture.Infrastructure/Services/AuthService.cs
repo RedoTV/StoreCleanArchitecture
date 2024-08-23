@@ -33,9 +33,7 @@ public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper, IConfi
         //if the password is incorrect, throw an exception
         bool verifyResult = VerifyPassword(user.Password, foundedUser.HashedPassword, Convert.FromHexString(foundedUser.Salt));
         if (!verifyResult)
-        {
             throw new VerificationException("password is incorrect");
-        }
         
         string token = GenerateToken(foundedUser);
         return token;
@@ -75,7 +73,7 @@ public class AuthService(UsersDbContext _usersDbContext, IMapper _mapper, IConfi
     
     private readonly int _keySize = 64;
     private readonly int _iterations = 350000;
-    private readonly HashAlgorithmName _hashAlgorithm = HashAlgorithmName.SHA256;
+    private readonly HashAlgorithmName _hashAlgorithm = HashAlgorithmName.SHA512;
     string HashPassword(string password, out byte[] salt)
     {
         salt = RandomNumberGenerator.GetBytes(_keySize);

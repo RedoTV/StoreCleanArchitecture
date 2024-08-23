@@ -22,8 +22,12 @@ public class EmailSender(IConfiguration configuration) : IEmailSender
             Credentials = new NetworkCredential(login, password)
         };
 
-        var sendingEmailProcess = Task.Run(async () => 
-            await client.SendMailAsync(login, email, subject, htmlMessage));
+        var sendingEmailProcess = Task.Run(async () =>
+        {
+            var message = new MailMessage(login, email, subject, htmlMessage);
+            message.IsBodyHtml = true;
+            await client.SendMailAsync(message);
+        });
 
         await sendingEmailProcess;
 

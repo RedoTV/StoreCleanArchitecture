@@ -9,13 +9,13 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AString_002ESearching_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FUsers_003F_0412_0430_0434_0438_043C_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fcac241b71611f4f0a185b3988ec18b7d242070a43b6c62dda117f496bf5a33a2_003FString_002ESearching_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	
 	<s:String x:Key="/Default/CodeInspection/Highlighting/SweaWarningsMode/@EntryValue">ShowAndRun</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=797f9902_002D7236_002D4970_002Db9aa_002D2b81ad7fe56b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetProduct_ShouldReturnProductFromDatabase" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=797f9902_002D7236_002D4970_002Db9aa_002D2b81ad7fe56b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetProduct_ShouldReturnProductFromDatabase" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::43C7A7E6-B923-4E31-88DB-716B87CF3BDC::net8.0::StoreCleanArchitecture.Tests.FunctionalTests.ProductServiceTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f356199a_002Db3af_002D4ff7_002Dbe69_002D3be46448c14b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetProduct_ShouldReturnProductFromDatabase #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f356199a_002Db3af_002D4ff7_002Dbe69_002D3be46448c14b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetProduct_ShouldReturnProductFromDatabase #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::43C7A7E6-B923-4E31-88DB-716B87CF3BDC::net8.0::StoreCleanArchitecture.Tests.FunctionalTests.ProductServiceTests.GetProduct_ShouldReturnProductFromDatabase&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::43C7A7E6-B923-4E31-88DB-716B87CF3BDC::net8.0::StoreCleanArchitecture.Tests.FunctionalTests.ProductServiceTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
