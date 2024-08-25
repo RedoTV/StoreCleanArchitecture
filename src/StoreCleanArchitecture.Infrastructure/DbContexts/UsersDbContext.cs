@@ -12,7 +12,8 @@ public class UsersDbContext : DbContext
     
     public DbSet<User> Users { get; set; }
 
-    // override protected void OnModelCreating(ModelBuilder builder){
+    // override protected void OnModelCreating(ModelBuilder builder)
+    // {
     //     base.OnModelCreating(builder);
     // }
 }
