@@ -1,14 +1,13 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
+import { router } from "./routes";
 // import { useState } from "react";
 
-function App() {
+export default function App() {
 
   return (
     <>
-      <Header />
+      <RouterProvider router={router} />;
     </>
   );
 }
-
-export default App;
